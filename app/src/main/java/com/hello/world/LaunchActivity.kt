@@ -23,7 +23,7 @@ class LaunchActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        Log.d("MasterLogs", "onStart Called")
+        Log.d("MasterLogs", "onStart Called ")
     }
 
     override fun onResume() {
