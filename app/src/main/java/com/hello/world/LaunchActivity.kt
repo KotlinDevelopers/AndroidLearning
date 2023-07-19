@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import androidx.fragment.app.FragmentManager
+import com.hello.world.fragments.TestFragment
 
 class LaunchActivity : AppCompatActivity() {
 
@@ -12,6 +14,12 @@ class LaunchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launch)
+
+        val testFragment = TestFragment()
+        val fragmentSupportManager = supportFragmentManager
+        val transaction = fragmentSupportManager.beginTransaction()
+        transaction.add(R.id.test_fragment, testFragment)
+        transaction.commit()
 
         Log.d("MasterLogs", "onCreate Called")
 
